@@ -7,66 +7,31 @@ export default function DistrictMap() {
   const mapUrl =
     "https://clevelandtn.maps.arcgis.com/apps/webappviewer/index.html?id=b51605b3d1764b4bb7ee9c0976bb0805";
 
-  const handleLocateMe = () => {
-    if (!navigator.geolocation) {
-      alert("Geolocation is not supported by your browser.");
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        const url = `${mapUrl}&center=${latitude},${longitude}`;
-        window.open(url, "_blank");
-      },
-      () => {
-        alert("Unable to retrieve your location.");
-      }
-    );
-  };
-
   return (
     <section id="district-map" className="py-24 bg-gray-50">
 
-      {/* Header Row */}
-      <div className="max-w-5xl mx-auto px-6 mb-12">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      {/* Centered Header */}
+      <div className="max-w-5xl mx-auto px-6 text-center mb-12">
+        <h2 className="text-4xl font-bold mb-4">
+          Interactive District Map
+        </h2>
 
-          {/* Title + Text */}
-          <div className="flex-1">
-            <h2 className="text-4xl font-bold mb-4">
-              Interactive District Map
-            </h2>
-
-            <p className="text-lg text-gray-700 max-w-xl">
-              Explore District 1 and the surrounding neighborhoods. Use the map
-              to see boundaries, streets, and community areas across the district.
-            </p>
-          </div>
-
-          {/* Locate Me Button */}
-          <button
-            onClick={handleLocateMe}
-            className="px-6 py-3 rounded-xl font-semibold text-blue-700 
-                       bg-blue-100 hover:bg-blue-200 transition shadow-sm
-                       w-full md:w-auto"
-          >
-            📍 Locate Me
-          </button>
-        </div>
+        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          Explore District 1 and the surrounding neighborhoods. Use the map
+          to see boundaries, streets, and community areas across the district.
+        </p>
       </div>
 
-      {/* Full‑Width Map */}
-      <div className="relative w-full min-h-[400px]">
-
+      {/* Full‑Width Map with Side Padding */}
+      <div className="relative w-full px-[25px]">
         {/* Loading Skeleton */}
         {loading && (
-          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+          <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-3xl" />
         )}
 
         <iframe
           src={mapUrl}
-          className={`w-full h-[400px] md:h-[600px] transition-opacity duration-700 ${
+          className={`w-full min-h-[300px] md:h-[500px] rounded-3xl shadow-2xl transition-opacity duration-700 ${
             loading ? "opacity-0" : "opacity-100"
           }`}
           style={{ border: "none" }}
@@ -81,7 +46,7 @@ export default function DistrictMap() {
           District 1 Overview
         </h2>
 
-        <div className="prose prose-lg text-gray-700 space-y-6">
+        <div className="prose prose-lg text-gray-700 space-y-6 mx-auto">
           <p>
             District 1 includes many of Cleveland’s long‑established neighborhoods,
             community corridors, and residential areas on the south side of the city.
