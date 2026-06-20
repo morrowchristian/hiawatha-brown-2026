@@ -29,12 +29,16 @@ body {
   color: var(--foreground);
 }
 
-/* Smooth scroll and focus styles */
 html {
   scroll-behavior: smooth;
 }
 
 :focus-visible {
+  outline: 3px solid #e91e63;
+  outline-offset: 4px;
+}
+
+a:focus-visible, button:focus-visible {
   outline: 3px solid #e91e63;
   outline-offset: 4px;
 }

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Experience, heart, and results for Cleveland, Tennessee.",
     images: [
       {
-        url: "/hiawatha-brown.png", // Update with full URL in production
+        url: "/hiawatha-brown.png",
         width: 1200,
         height: 630,
         alt: "Hiawatha Brown",
@@ -51,7 +51,7 @@ const schemaMarkup = {
         "@type": "Organization",
         "name": "Friends of Hiawatha Brown for City Council"
       },
-      "description": "Hiawatha Brown is a passionate community leader running for Cleveland City Council District 1 in 2026. Focused on public safety, parks & recreation, and economic growth.",
+      "description": "Hiawatha Brown is a passionate community leader running for Cleveland City Council District 1 in 2026.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Cleveland",
@@ -60,7 +60,6 @@ const schemaMarkup = {
       },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61567583096946"
-        // Add more links here (Instagram, X/Twitter, etc.)
       ],
       "knowsAbout": [
         "Public Safety",
@@ -75,18 +74,13 @@ const schemaMarkup = {
       "@id": "https://yourdomain.com/#organization",
       "name": "Friends of Hiawatha Brown for City Council",
       "url": "https://yourdomain.com",
-      "logo": "https://yourdomain.com/hb-logo.png", // Or your HB circle logo
+      "logo": "https://yourdomain.com/hb-logo.png",
       "description": "Official campaign supporting Hiawatha Brown for Cleveland City Council District 1 in the 2026 election.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Cleveland",
         "addressRegion": "TN",
         "addressCountry": "US"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "campaign information",
-        "url": "https://yourdomain.com/#get-involved"
       }
     }
   ]
@@ -100,11 +94,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <head>
+        {/* Schema Markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(schemaMarkup),
           }}
+        />
+        
+        {/* Facebook SDK */}
+        <script 
+          async 
+          defer 
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"
         />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
