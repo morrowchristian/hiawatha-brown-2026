@@ -3,16 +3,9 @@ import { useState } from "react";
 
 export default function DistrictMap() {
   const [loading, setLoading] = useState(true);
-  const [address, setAddress] = useState("");
 
   const mapUrl =
     "https://clevelandtn.maps.arcgis.com/apps/webappviewer/index.html?id=b51605b3d1764b4bb7ee9c0976bb0805";
-
-  const handleSearch = () => {
-    if (!address.trim()) return;
-    const encoded = encodeURIComponent(address);
-    window.open(`${mapUrl}&find=${encoded}`, "_blank");
-  };
 
   const handleLocateMe = () => {
     if (!navigator.geolocation) {
@@ -23,7 +16,7 @@ export default function DistrictMap() {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const { latitude, longitude } = pos.coords;
-        const url = `${mapUrl}&find=${latitude},${longitude}`;
+        const url = `${mapUrl}&center=${latitude},${longitude}`;
         window.open(url, "_blank");
       },
       () => {
@@ -34,83 +27,57 @@ export default function DistrictMap() {
 
   return (
     <section id="district-map" className="py-24 bg-gray-50">
-      <div className="max-w-5xl mx-auto px-6">
 
-        {/* Header */}
-        <h2 className="text-4xl font-bold text-center mb-10">
-          Interactive District Map
-        </h2>
+      {/* Header Row */}
+      <div className="max-w-5xl mx-auto px-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
-        {/* Search Bar + Locate Me */}
-        <div className="max-w-xl mx-auto mb-12 space-y-4">
+          {/* Title + Text */}
+          <div className="flex-1">
+            <h2 className="text-4xl font-bold mb-4">
+              Interactive District Map
+            </h2>
 
-          {/* Search Bar */}
-          <div className="flex gap-3">
-            <input
-              type="text"
-              placeholder="Enter your address..."
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              className="flex-1 px-5 py-3 rounded-xl border border-gray-300 shadow-sm 
-                         bg-white/90 backdrop-blur-sm
-                         focus:ring-2 focus:ring-blue-600 focus:outline-none
-                         text-gray-800 placeholder-gray-500"
-            />
-
-            <button
-              onClick={handleSearch}
-              className="px-6 py-3 rounded-xl font-semibold text-white 
-                         bg-blue-700 hover:bg-blue-800 transition shadow-md"
-            >
-              Find
-            </button>
+            <p className="text-lg text-gray-700 max-w-xl">
+              Explore District 1 and the surrounding neighborhoods. Use the map
+              to see boundaries, streets, and community areas across the district.
+            </p>
           </div>
 
           {/* Locate Me Button */}
           <button
             onClick={handleLocateMe}
-            className="w-full py-3 rounded-xl font-semibold text-blue-700 
-                       bg-blue-100 hover:bg-blue-200 transition shadow-sm"
+            className="px-6 py-3 rounded-xl font-semibold text-blue-700 
+                       bg-blue-100 hover:bg-blue-200 transition shadow-sm
+                       w-full md:w-auto"
           >
             📍 Locate Me
           </button>
         </div>
+      </div>
 
-        {/* Map + Text Grid */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Full‑Width Map */}
+      <div className="relative w-full min-h-[400px]">
 
-          {/* Description */}
-          <div className="prose prose-lg text-gray-700 space-y-6">
-            <p>
-              This interactive map helps residents quickly identify their district
-              and explore the neighborhoods, streets, and community areas that make
-              up District 1.
-            </p>
-          </div>
+        {/* Loading Skeleton */}
+        {loading && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        )}
 
-          {/* Map Container */}
-          <div className="relative w-full">
+        <iframe
+          src={mapUrl}
+          className={`w-full h-[400px] md:h-[600px] transition-opacity duration-700 ${
+            loading ? "opacity-0" : "opacity-100"
+          }`}
+          style={{ border: "none" }}
+          allowFullScreen
+          onLoad={() => setLoading(false)}
+        />
+      </div>
 
-            {/* Loading Skeleton */}
-            {loading && (
-              <div className="absolute inset-0 rounded-3xl bg-gray-200 animate-pulse" />
-            )}
-
-            {/* Map Iframe */}
-            <iframe
-              src={mapUrl}
-              className={`w-full h-80 md:h-full rounded-3xl shadow-2xl transition-opacity duration-700 ${
-                loading ? "opacity-0" : "opacity-100"
-              }`}
-              style={{ border: "none" }}
-              allowFullScreen
-              onLoad={() => setLoading(false)}
-            />
-          </div>
-        </div>
-
-        {/* Overview Section */}
-        <h2 className="text-4xl font-bold text-center mt-24 mb-16">
+      {/* Overview Section */}
+      <div className="max-w-5xl mx-auto px-6 mt-24">
+        <h2 className="text-4xl font-bold text-center mb-16">
           District 1 Overview
         </h2>
 
@@ -147,8 +114,8 @@ export default function DistrictMap() {
             </li>
           </ul>
         </div>
-
       </div>
+
     </section>
   );
 }
