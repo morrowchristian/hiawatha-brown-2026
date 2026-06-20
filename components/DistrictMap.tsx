@@ -22,22 +22,23 @@ export default function DistrictMap() {
         </p>
       </div>
 
-      {/* Full‑Width Map with Side Padding */}
-      <div className="relative w-full px-[75px]">
-        {/* Loading Skeleton */}
-        {loading && (
-          <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-3xl" />
-        )}
+      {/* Map aligned with text width */}
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="relative w-full">
+          {loading && (
+            <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-3xl" />
+          )}
 
-        <iframe
-          src={mapUrl}
-          className={`w-full min-h-[300px] md:h-[500px] rounded-3xl shadow-2xl transition-opacity duration-700 ${
-            loading ? "opacity-0" : "opacity-100"
-          }`}
-          style={{ border: "none" }}
-          allowFullScreen
-          onLoad={() => setLoading(false)}
-        />
+          <iframe
+            src={mapUrl}
+            className={`w-full min-h-[600px] rounded-3xl shadow-2xl transition-opacity duration-700 ${
+              loading ? "opacity-0" : "opacity-100"
+            }`}
+            style={{ border: "none" }}
+            allowFullScreen
+            onLoad={() => setLoading(false)}
+          />
+        </div>
       </div>
 
       {/* Overview Section */}
