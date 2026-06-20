@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hiawatha Brown 2026 — Campaign Website
+
+Official campaign site for Hiawatha Brown, candidate for Cleveland, TN City
+Council, 2026.
+
+Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4. Deployed on Vercel.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js 20+
+- npm
+
+### Install
+
+npm install
+
+### Environment Variables
+
+cp .env.example .env.local
+
+Open `.env.local` and fill in the required values (see `.env.example` for descriptions).
+
+### Run Dev Server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command         | Description                  |
+|---|---|
+| npm run dev     | Start local dev server       |
+| npm run build   | Production build             |
+| npm run start   | Serve production build locally |
+| npm run lint    | Run ESLint                   |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+app/                  # Next.js App Router
+  (public)/           # Public-facing pages
+  admin/              # Staff admin panel (auth-protected)
+public/               # Static assets
+  downtown-cleveland.png
+.env.example          # Environment variable template
+AGENTS.md             # AI coding agent context
+CLAUDE.md             # Claude Code context
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed automatically to Vercel on push to main.
+
+Environment variables must be configured in the Vercel project dashboard —
+they are not committed to the repo.
+
+---
+
+## Contributing
+
+This is a private campaign project. Contact the campaign for access.
