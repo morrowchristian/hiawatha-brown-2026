@@ -19,7 +19,16 @@ export default function Events() {
         </div>
 
         <p className="text-center mt-10 text-gray-500">
-          Follow for the latest events, announcements, and campaign news.
+        Can't see the feed or want to be notified the moment we post?{" "}
+        <a
+            href="https://www.facebook.com/profile.php?id=61567583096946"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#e91e63] font-semibold hover:underline"
+        >
+            Follow us on Facebook
+        </a>{" "}
+        to get instant updates on events, announcements, and campaign news delivered straight to your feed.
         </p>
       </div>
     </section>
