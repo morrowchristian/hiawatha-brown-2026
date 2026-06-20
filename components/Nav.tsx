@@ -1,50 +1,122 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, ExternalLink } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Platform", href: "#platform" },
+  { label: "District Map", href: "#district-map" },
+  { label: "Updates", href: "#updates" },
+  {
+    label: "Register to Vote",
+    href: "https://ovr.govote.tn.gov/",
+    external: true,
+  },
+];
 
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="bg-white border-b sticky top-0 z-50 shadow-sm">
-      <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-[#e91e63] rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-md">
+    <nav
+      className={ `sticky top-0 z-50 bg-gray-700/90 py-3 shadow-lg" }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+
+        {/* Logo */}
+        <a href="#" className="flex items-center gap-3 group">
+          <div className="w-11 h-11 bg-[#e91e63] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-sm group-hover:scale-105 transition-transform">
             HB
           </div>
-          <div>
-            <div className="font-semibold text-xl tracking-tight">Hiawatha Brown</div>
-            <div className="text-sm text-gray-600 -mt-1">Cleveland City Council • District 1</div>
+          <div className="hidden sm:block">
+            <div className="text-med font-bold text-white/90 leading-tight">
+              <p>District 1</p>
+              <div className="border-b border-[#e91e63] my-0.25" />
+              <p>City Council</p>
+            </div>
+          </div>
+        </a>
+
+        {/* Desktop Links (optically centered) */}
+        <div className="hidden md:flex flex-1 justify-center">
+          <div className="flex items-center gap-10 font-medium text-sm text-gray-100">
+            {navLinks.map(({ label, href, external }) => (
+              <a
+                key={label}
+                href={href}
+                className="relative group flex items-center gap-1"
+              >
+                <span className="transition-colors group-hover:text-[#e91e63]">
+                  {label}
+                </span>
+
+                {external && (
+                  <ExternalLink className="w-3 h-3 opacity-70 group-hover:text-[#e91e63]" />
+                )}
+
+                {/* Underline animation */}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#e91e63] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 font-medium">
-          <a href="#about" className="hover:text-[#e91e63] transition-colors">About</a>
-          <a href="#platform" className="hover:text-[#e91e63] transition-colors">Platform</a>
-          <a href="#events" className="hover:text-[#e91e63] transition-colors">Events</a>
-          <a href="#get-involved" className="hover:text-[#e91e63] transition-colors">Get Involved</a>
-          <a href="https://www.facebook.com/profile.php?id=61567583096946" target="_blank" className="text-[#e91e63] hover:underline font-medium">Facebook</a>
-        </div>
-
-        <a href="#get-involved" className="hidden md:block bg-[#e91e63] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#c2185b] transition-all active:scale-95">
-          Join Us
+        {/* Desktop CTA */}
+        <a
+          href="#get-involved"
+          className="hidden md:block bg-[#e91e63] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#c2185b] transition-all hover:scale-[1.05] active:scale-95"
+        >
+          Get Involved
         </a>
 
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-2xl">
-          {mobileMenuOpen ? <X /> : <Menu />}
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? (
+            <X className="w-6 h-6 text-gray-100" />
+          ) : (
+            <Menu className="w-6 h-6 text-gray-100" />
+          )}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t bg-white">
-          <div className="flex flex-col px-6 py-6 space-y-4 font-medium">
-            <a href="#about" className="hover:text-[#e91e63]">About</a>
-            <a href="#platform" className="hover:text-[#e91e63]">Platform</a>
-            <a href="#events" className="hover:text-[#e91e63]">Events</a>
-            <a href="#get-involved" className="hover:text-[#e91e63]">Get Involved</a>
-            <a href="https://www.facebook.com/profile.php?id=61567583096946" target="_blank" className="text-[#e91e63]">Facebook</a>
-            <a href="#get-involved" className="bg-[#e91e63] text-white px-6 py-3 rounded-full text-center font-semibold">Join Us</a>
+        <div className="md:hidden border-t border-gray-700/30 bg-gray-900/95 backdrop-blur-md animate-fadeIn">
+          <div className="flex flex-col px-6 py-5 space-y-2">
+
+            {navLinks.map(({ label, href, external }) => (
+              <a
+                key={label}
+                href={href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-4 text-gray-100 font-medium hover:text-[#e91e63] border-b border-gray-700/30 last:border-0 flex items-center gap-2"
+              >
+                {label}
+                {external && (
+                  <ExternalLink className="w-4 h-4 opacity-70" />
+                )}
+              </a>
+            ))}
+
+            <a
+              href="#get-involved"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-4 bg-[#e91e63] text-white px-6 py-3 rounded-full text-center font-semibold hover:bg-[#c2185b] transition-colors hover:scale-[1.03] active:scale-95"
+            >
+              Get Involved
+            </a>
           </div>
         </div>
       )}

@@ -1,10 +1,11 @@
+// app/page.tsx
 "use client";
 
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import DistrictMap from "@/components/DistrictMap";
 import Platform from "@/components/Platform";
+import DistrictMap from "@/components/DistrictMap";
 import Events from "@/components/Events";
 import GetInvolved from "@/components/GetInvolved";
 import Footer from "@/components/Footer";
@@ -15,8 +16,8 @@ export default function Home() {
       <Nav />
       <Hero />
       <About />
-      <DistrictMap />
       <Platform />
+      <DistrictMap />
       <Events />
       <GetInvolved />
       <Footer />

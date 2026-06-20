@@ -1,3 +1,4 @@
+// components/GetInvolved.tsx
 import { ArrowRight } from "lucide-react";
 
 export default function GetInvolved() {

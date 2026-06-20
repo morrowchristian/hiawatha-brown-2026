@@ -1,4 +1,4 @@
-/* globals.css */
+/* app/globals.css */
 @import "tailwindcss";
 
 :root {
@@ -6,7 +6,7 @@
   --foreground: #171717;
   --primary-pink: #e91e63;
   --deep-green: #15803d;
-  --accent: var(--primary-pink);
+  --accent: var(--deep-green);
 }
 
 @theme inline {

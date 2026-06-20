@@ -1,4 +1,3 @@
-// components/Platform.tsx
 "use client";
 import { useState } from "react";
 import {
@@ -104,7 +103,9 @@ export default function Platform() {
 
   return (
     <section id="platform" className="py-24 bg-gray-50">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Header */}
         <div className="text-center mb-16">
           <p className="text-[#e91e63] font-semibold tracking-widest uppercase text-sm mb-3">
             What We Stand For
@@ -113,35 +114,100 @@ export default function Platform() {
             A Platform Built for District 1
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            Real issues, real commitments. Click any topic to read the full
-            position.
+            Real issues, real commitments. Click any topic to read the full position.
           </p>
         </div>
 
-        <div className="space-y-4">
-          {items.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveItem(item)}
-              className="group w-full text-left bg-white p-7 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-[#e91e63]/30 flex items-center gap-6"
-            >
-              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#e91e63]/10 flex items-center justify-center group-hover:bg-[#e91e63]/20 transition-colors duration-300">
-                <item.icon className="w-7 h-7 text-[#e91e63]" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#e91e63] mb-1 block">
-                  {item.tag}
+        {/* Sidebar + List Layout */}
+        <div className="grid md:grid-cols-[32%_1fr] gap-12">
+
+          {/* Sidebar Panel */}
+          <aside className="bg-white rounded-3xl shadow p-8 h-fit sticky top-24">
+            <p className="text-[#e91e63] font-semibold tracking-widest uppercase text-sm mb-3">
+              The District
+            </p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              District 1 at a Glance
+            </h3>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              District 1 covers many of Cleveland's longest-established neighborhoods,
+              anchored in the south side of the city. It's a district with deep
+              community roots, aging infrastructure, and a strong sense of identity.
+            </p>
+
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 w-5 h-5 rounded-full bg-[#e91e63]/10 flex items-center justify-center">
+                  <span className="w-2 h-2 rounded-full bg-[#e91e63]" />
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
-                  {item.desc}
-                </p>
-              </div>
-              <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#e91e63] flex-shrink-0 transition-colors duration-300" />
-            </button>
-          ))}
+                <span className="text-gray-700 text-sm leading-relaxed">
+                  <strong className="text-gray-900">South Side Core:</strong> Older
+                  residential streets and long-standing neighborhoods with generational
+                  roots.
+                </span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-1 w-5 h-5 rounded-full bg-[#e91e63]/10 flex items-center justify-center">
+                  <span className="w-2 h-2 rounded-full bg-[#e91e63]" />
+                </span>
+                <span className="text-gray-700 text-sm leading-relaxed">
+                  <strong className="text-gray-900">Community Anchors:</strong> Parks,
+                  schools, and public spaces that serve as gathering points for families.
+                </span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-1 w-5 h-5 rounded-full bg-[#e91e63]/10 flex items-center justify-center">
+                  <span className="w-2 h-2 rounded-full bg-[#e91e63]" />
+                </span>
+                <span className="text-gray-700 text-sm leading-relaxed">
+                  <strong className="text-gray-900">Housing Diversity:</strong> A blend
+                  of single-family homes, rentals, and neighborhoods with varied housing
+                  needs.
+                </span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-1 w-5 h-5 rounded-full bg-[#e91e63]/10 flex items-center justify-center">
+                  <span className="w-2 h-2 rounded-full bg-[#e91e63]" />
+                </span>
+                <span className="text-gray-700 text-sm leading-relaxed">
+                  <strong className="text-gray-900">Infrastructure Needs:</strong> Aging
+                  streets, sidewalks, and drainage systems that require sustained
+                  investment.
+                </span>
+              </li>
+            </ul>
+          </aside>
+
+          {/* Platform List */}
+          <div className="space-y-4">
+            {items.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveItem(item)}
+                className="group w-full text-left bg-white p-7 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-[#e91e63]/30 flex items-center gap-6"
+              >
+                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#e91e63]/10 flex items-center justify-center group-hover:bg-[#e91e63]/20 transition-colors duration-300">
+                  <item.icon className="w-7 h-7 text-[#e91e63]" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-[#e91e63] mb-1 block">
+                    {item.tag}
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">
+                    {item.desc}
+                  </p>
+                </div>
+                <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-[#e91e63] flex-shrink-0 transition-colors duration-300" />
+              </button>
+            ))}
+          </div>
+
         </div>
       </div>
 
@@ -155,6 +221,7 @@ export default function Platform() {
           }}
         >
           <div className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-[#e91e63] to-[#c2185b] px-8 pt-8 pb-6 relative flex-shrink-0">
               <button
@@ -179,12 +246,10 @@ export default function Platform() {
 
             {/* Modal Body */}
             <div className="overflow-y-auto px-8 py-7 flex-1 space-y-6">
-              {/* Overview */}
               <p className="text-gray-700 leading-relaxed text-base">
                 {activeItem.long}
               </p>
 
-              {/* Commitments */}
               <div>
                 <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-3">
                   Hiawatha's Commitments
@@ -203,7 +268,6 @@ export default function Platform() {
                 </ul>
               </div>
 
-              {/* Contrast callout */}
               {activeItem.contrast && (
                 <div className="border-l-4 border-[#e91e63]/40 bg-gray-50 rounded-r-xl px-5 py-4">
                   <p className="text-xs font-semibold uppercase tracking-widest text-[#e91e63] mb-1">
@@ -232,6 +296,7 @@ export default function Platform() {
                 Close
               </button>
             </div>
+
           </div>
         </div>
       )}

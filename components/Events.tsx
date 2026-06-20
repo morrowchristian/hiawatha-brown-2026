@@ -1,6 +1,6 @@
 export default function Events() {
   return (
-    <section id="events" className="py-24 bg-white">
+    <section id="events" className="py-24 bg-lightgreen-100">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12">Latest Updates</h2>
 
@@ -26,9 +26,9 @@ export default function Events() {
             rel="noopener noreferrer"
             className="text-[#e91e63] font-semibold hover:underline"
         >
-            Follow us on Facebook
+            Visit us on Facebook
         </a>{" "}
-        to get instant updates on events, announcements, and campaign news delivered straight to your feed.
+        to follow the page and get notified about events and campaign news.
         </p>
       </div>
     </section>
