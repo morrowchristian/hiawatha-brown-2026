@@ -23,7 +23,7 @@ export default function DistrictMap() {
       </div>
 
       {/* Full‑Width Map with Side Padding */}
-      <div className="relative w-full px-[25px]">
+      <div className="relative w-full px-[75px]">
         {/* Loading Skeleton */}
         {loading && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-3xl" />
