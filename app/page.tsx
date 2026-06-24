@@ -64,7 +64,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="h-screen flex flex-col bg-[#EEF1F5] overflow-hidden">
+      <div className="min-h-screen flex flex-col bg-[#EEF1F5]">
         <section
           className="flex-1 max-w-7xl w-full mx-auto px-3 py-3 grid grid-cols-4 md:grid-cols-12 gap-2"
           style={{ gridTemplateRows: "repeat(6, 1fr)" }}
