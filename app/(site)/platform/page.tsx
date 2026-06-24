@@ -1,6 +1,5 @@
 // app/(site)/platform/page.tsx
-import Platform from "@/components/Platform";
-
+import PlatformPanel from "@/components/panels/PlatformPanel";
 export default function PlatformPage() {
-  return <Platform />;
+  return <div className="max-w-2xl mx-auto py-6"><PlatformPanel /></div>;
 }

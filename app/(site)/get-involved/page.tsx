@@ -1,6 +1,5 @@
 // app/(site)/get-involved/page.tsx
-import GetInvolved from "@/components/GetInvolved";
-
+import GetInvolvedPanel from "@/components/panels/GetInvolvedPanel";
 export default function GetInvolvedPage() {
-  return <GetInvolved />;
+  return <div className="max-w-2xl mx-auto py-6"><GetInvolvedPanel /></div>;
 }
