@@ -4,27 +4,26 @@ import Link from "next/link";
 
 export default function Nav() {
   return (
-    <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 py-4">
+    <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 py-4">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         
-        {/* Logo - Only thing left */}
+        {/* Minimal Logo Only */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-[#E8366A] rounded-xl flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform">
+          <div className="w-11 h-11 bg-[#E8366A] rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-lg group-hover:scale-105 transition-transform">
             HB
           </div>
-          <div>
-            <div className="font-bold text-white tracking-tight text-lg leading-none">
+          <div className="hidden sm:block">
+            <div className="font-black text-white tracking-tighter text-xl leading-none">
               HIAWATHA BROWN
             </div>
-            <div className="text-[#E8366A] text-xs font-medium tracking-widest uppercase -mt-0.5">
-              DISTRICT 1
+            <div className="text-[#E8366A] text-xs font-medium tracking-[2px] uppercase">
+              DISTRICT 1 • CLEVELAND
             </div>
           </div>
         </Link>
 
-        {/* Optional: Very minimal right side */}
-        <div className="text-white/40 text-sm font-medium hidden sm:block">
-          Cleveland, TN • 2026
+        <div className="text-white/30 text-sm hidden md:block">
+          2026 City Council
         </div>
       </div>
     </nav>

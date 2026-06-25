@@ -1,6 +1,7 @@
 // app/(site)/layout.tsx
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import Footer from "@/components/Footer";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,19 +27,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
 
       <main className="flex-1">{children}</main>
 
-      <footer className="bg-[#1E2A38] px-6 py-3 flex items-center justify-between shrink-0">
-        <p className="text-white/30 text-xs">
-          Paid for by Friends of Hiawatha Brown for City Council
-        </p>
-        <a
-          href="https://ovr.govote.tn.gov/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#8DA3B8] text-xs hover:text-[#E8366A] transition-colors"
-        >
-          Register to Vote
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }

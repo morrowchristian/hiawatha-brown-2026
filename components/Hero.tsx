@@ -14,11 +14,11 @@ interface HeroProps {
 
 export default function Hero({ onOpenPanel, onSubscribe }: HeroProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-12  gap-6 items-center w-full">
       {/* LEFT COLUMN: Hero Content */}
-      <div className="lg:col-span-7 space-y-6 text-left">
+      <div className="lg:col-span-7 lg:-mr-4 space-y-6 text-left">
         <div className="space-y-3">
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] drop-shadow-md">
+          <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] drop-shadow-md ">
             HIAWATHA<br />BROWN
           </h1>
           
@@ -27,7 +27,7 @@ export default function Hero({ onOpenPanel, onSubscribe }: HeroProps) {
               City Council &middot; District 1 &middot; Cleveland, TN
             </p>
             <p className="text-[#E8366A] font-extrabold text-sm md:text-base tracking-widest uppercase">
-              A Voice for District 1, A Vision for Cleveland
+              Fighting for South Cleveland Families
             </p>
           </div>
         </div>
@@ -36,10 +36,15 @@ export default function Hero({ onOpenPanel, onSubscribe }: HeroProps) {
         <div className="pt-2 flex flex-wrap gap-4 items-center">
           <button 
             onClick={() => onOpenPanel('get-involved')}
-            className="inline-flex items-center gap-2 bg-[#E8366A] text-white font-black text-base px-8 py-4 rounded-xl shadow-2xl hover:bg-[#ff477e] hover:scale-[1.03] active:scale-[0.98] transition-all group scale-105"
+            className="inline-flex items-center gap-2 bg-[#E8366A] text-white font-black text-lg md:text-xl px-10 md:px-12 py-5 md:py-6 rounded-xl shadow-2xl hover:bg-[#ff477e] hover:scale-[1.03] active:scale-[0.98] transition-all group scale-105 relative overflow-hidden"
+            style={{
+              boxShadow: '0 0 30px rgba(232, 54, 106, 0.5), 0 0 60px rgba(232, 54, 106, 0.25)'
+            }}
           >
-            Donate Now
-            <Heart className="w-5 h-5 fill-white group-hover:scale-110 transition-transform" />
+            <span className="relative z-10 flex items-center gap-2">
+              Donate Now
+              <Heart className="w-6 h-6 md:w-7 md:h-7 fill-white group-hover:scale-110 transition-transform" />
+            </span>
           </button>
           
           <button 
@@ -55,7 +60,7 @@ export default function Hero({ onOpenPanel, onSubscribe }: HeroProps) {
       </div>
 
       {/* RIGHT COLUMN: Three Cards */}
-      <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 w-full">
+      <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 w-full">
         <PlatformCard onOpenPanel={onOpenPanel} />
         <BioCard onOpenPanel={onOpenPanel} />
         <DistrictCard onOpenPanel={onOpenPanel} />
