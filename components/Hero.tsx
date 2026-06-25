@@ -1,8 +1,11 @@
 // components/Hero.tsx
 'use client';
+
+import React from 'react';
 import { ArrowRight, Mail, Shield, User, Heart, CheckCircle } from 'lucide-react';
-import PlatformCard from './Platform';
+import PlatformCard from './PlatformCard';
 import BioCard from './BioCard';
+import DistrictCard from './DistrictCard';
 
 interface HeroProps {
   onOpenPanel: (key: 'about' | 'platform' | 'map' | 'get-involved') => void;
@@ -51,16 +54,17 @@ export default function Hero({ onOpenPanel, onSubscribe }: HeroProps) {
         <SubscriptionForm onSubscribe={onSubscribe} />
       </div>
 
-      {/* RIGHT COLUMN: Cards */}
+      {/* RIGHT COLUMN: Three Cards */}
       <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 w-full">
         <PlatformCard onOpenPanel={onOpenPanel} />
         <BioCard onOpenPanel={onOpenPanel} />
+        <DistrictCard onOpenPanel={onOpenPanel} />
       </div>
     </div>
   );
 }
 
-// Small internal component for the form
+// Subscription Form
 function SubscriptionForm({ onSubscribe }: { onSubscribe: (email: string, zip: string) => void }) {
   const [email, setEmail] = React.useState('');
   const [zip, setZip] = React.useState('');
