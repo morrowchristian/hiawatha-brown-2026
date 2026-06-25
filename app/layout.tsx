@@ -102,7 +102,6 @@ export default function RootLayout({
             __html: JSON.stringify(schemaMarkup),
           }}
         />
-        
         {/* Facebook SDK */}
         <script 
           async 
@@ -110,7 +109,9 @@ export default function RootLayout({
           src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="h-full bg-black text-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }
