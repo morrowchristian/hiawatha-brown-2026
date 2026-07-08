@@ -3,7 +3,7 @@
 import { ArrowRight, User } from 'lucide-react';
 
 interface BioCardProps {
-  onOpenPanel: (key: 'about' | 'platform' | 'map' | 'get-involved') => void;
+  onOpenPanel: (key: 'about' | 'platform' | 'map') => void;
 }
 
 export default function BioCard({ onOpenPanel }: BioCardProps) {

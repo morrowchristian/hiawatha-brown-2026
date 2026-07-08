@@ -3,7 +3,7 @@
 import { ArrowRight, Shield, CheckCircle } from 'lucide-react';
 
 interface PlatformCardProps {
-  onOpenPanel: (key: 'about' | 'platform' | 'map' | 'get-involved') => void;
+  onOpenPanel: (key: 'about' | 'platform' | 'map') => void;
 }
 
 export default function PlatformCard({ onOpenPanel }: PlatformCardProps) {

@@ -3,7 +3,7 @@
 import { ArrowRight, MapPin } from 'lucide-react';
 
 interface DistrictCardProps {
-  onOpenPanel: (key: 'about' | 'platform' | 'map' | 'get-involved') => void;
+  onOpenPanel: (key: 'about' | 'platform' | 'map') => void;
 }
 
 export default function DistrictCard({ onOpenPanel }: DistrictCardProps) {

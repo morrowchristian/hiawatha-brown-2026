@@ -8,13 +8,12 @@ import Background from '../components/Background';
 import Hero from '../components/Hero';
 import SocialProof from '../components/SocialProof';
 import PanelSystem from '../components/PanelSystem';
+import GetInvolved from '../components/GetInvolved';
 
-type PanelKey = 'about' | 'platform' | 'map' | 'get-involved';
+type PanelKey = 'about' | 'platform' | 'map';
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<PanelKey | null>(null);
-  const [email, setEmail] = useState('');
-  const [zip, setZip] = useState('');
 
   const open = useCallback((key: PanelKey) => setActivePanel(key), []);
   const close = useCallback(() => setActivePanel(null), []);
@@ -36,12 +35,6 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [close]);
 
-  const handleSubscribe = (submittedEmail: string, submittedZip: string) => {
-    alert(`Thank you for subscribing, neighbor! (${submittedEmail}, ${submittedZip})`);
-    setEmail('');
-    setZip('');
-  };
-
   return (
     <>
       <div className="min-h-screen flex flex-col relative text-white selection:bg-[#E8366A]/30">
@@ -49,7 +42,8 @@ export default function Home() {
         <Nav />
 
         <main className="flex-1 relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 flex flex-col justify-center py-12 lg:py-20">
-          <Hero onOpenPanel={open} onSubscribe={handleSubscribe} />
+          <Hero onOpenPanel={open} />
+          <GetInvolved />
           <SocialProof />
         </main>
 

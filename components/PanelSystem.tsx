@@ -3,15 +3,13 @@
 import About from './panels/AboutPanel';
 import Platform from './panels/PlatformPanel';
 import DistrictMap from './panels/DistrictPanel';
-import GetInvolved from './panels/GetInvolvedPanel';
 
-type PanelKey = 'about' | 'platform' | 'map' | 'get-involved';
+type PanelKey = 'about' | 'platform' | 'map';
 
 const panelComponents: Record<PanelKey, React.ComponentType<{ onClose: () => void }>> = {
   about: About,
   platform: Platform,
   map: DistrictMap,
-  'get-involved': GetInvolved,
 };
 
 interface PanelSystemProps {
@@ -25,7 +23,6 @@ export default function PanelSystem({ activePanel, onClose }: PanelSystemProps) 
     about: 'Meet Hiawatha',
     platform: 'The Platform',
     map: 'District 1 Map',
-    'get-involved': 'Join the Movement',
   };
   const activeLabel = activePanel ? labels[activePanel] : '';
 
