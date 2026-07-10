@@ -80,7 +80,7 @@ export default function PlatformCard() {
               <div key={index} className="card-inner fluid-stack">
                 <div className="flex items-start gap-4">
                   <div className="card-icon shrink-0 mt-1">
-                    <Icon className="w-6 h-6 text-[#E8366A]" />
+                    <Icon className="w-6 h-6 text-[#ff4f85]" />
                   </div>
                   <div className="flex-1">
                     <p className="card-label tracking-widest mb-3 text-lg">{item.title}</p>
@@ -88,14 +88,14 @@ export default function PlatformCard() {
                     <ul className="space-y-2.5 mb-5">
                       {item.commitments.map((commitment, i) => (
                         <li key={i} className="card-body flex gap-3">
-                          <span className="text-[#E8366A] shrink-0 mt-1 text-lg leading-none">•</span>
+                          <span className="text-[#ff4f85] shrink-0 mt-1 text-lg leading-none">•</span>
                           <span>{commitment}</span>
                         </li>
                       ))}
                     </ul>
 
                     <div className="pt-4 border-t border-white/10">
-                      <p className="text-[#E8366A] text-xs font-medium tracking-wider mb-1">THE DIFFERENCE</p>
+                      <p className="text-[#ff4f85] text-xs font-medium tracking-wider mb-1">THE DIFFERENCE</p>
                       <p className="card-body text-white/75 leading-relaxed">{item.difference}</p>
                     </div>
                   </div>

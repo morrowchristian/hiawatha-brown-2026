@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary-pink: #e91e63;
+  --primary-pink:  #ff4f85;
   --deep-green: #15803d;
 
   --font-sans: var(--font-geist-sans), system-ui, -apple-system,
@@ -42,7 +42,7 @@
 
 /* FIXED TYPOGRAPHY */
 .text-title-lg {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 900;
 }
@@ -146,8 +146,8 @@ button:focus-visible {
 }
 
 .card-label {
-  color: #E8366A;
-  font-size: 10px;
+  color: #ff4f85;
+  font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.15em;

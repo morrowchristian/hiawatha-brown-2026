@@ -29,7 +29,7 @@ export default function BioCard() {
   return (
     <div className="card w-full text-left">
       <div className="fluid-pad fluid-stack">
-        <div>
+        <div className="text-center">
           <p className="card-label tracking-[0.25em]">MEET HIAWATHA BROWN</p>
           <h2 className="fluid-title text-white">Lifelong Educator &amp; Community Leader</h2>
         </div>
@@ -38,7 +38,7 @@ export default function BioCard() {
           {bioCards.map(({ icon: Icon, subtitle, body }, i) => (
             <div key={i} className="card-inner fluid-stack">
               <div className="card-icon">
-                <Icon className="w-5 h-5 text-[#E8366A]" />
+                <Icon className="w-5 h-5 text-[#ff4f85]" />
               </div>
               <p className="card-label tracking-widest">{subtitle}</p>
               <p className="card-body">{body}</p>

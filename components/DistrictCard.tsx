@@ -44,7 +44,7 @@ export default function DistrictCard() {
               <div key={i} className="card-inner fluid-stack">
                 <div className="flex items-start gap-4">
                   <div className="card-icon shrink-0">
-                    <Icon className="w-6 h-6 text-[#E8366A]" />
+                    <Icon className="w-6 h-6 text-[#ff4f85]" />
                   </div>
                   <div>
                     <p className="card-label tracking-widest mb-2">{fact.title}</p>
@@ -59,7 +59,7 @@ export default function DistrictCard() {
         {/* Official Interactive District Map */}
         <div className="pt-8 mt-8 border-t border-white/10">
           <div className="flex items-center gap-3 mb-4">
-            <MapPin className="w-5 h-5 text-[#E8366A]" />
+            <MapPin className="w-5 h-5 text-[#ff4f85]" />
             <p className="card-label tracking-widest">Official District 1 Map</p>
           </div>
           
@@ -89,7 +89,7 @@ export default function DistrictCard() {
         {/* Why District 1 Matters */}
         <div className="pt-8 mt-8 border-t border-white/10">
           <div className="flex items-center gap-3 mb-3">
-            <Award className="w-5 h-5 text-[#E8366A]" />
+            <Award className="w-5 h-5 text-[#ff4f85]" />
             <p className="card-label tracking-widest">Why District 1 Matters</p>
           </div>
           <p className="card-body text-white/80">
