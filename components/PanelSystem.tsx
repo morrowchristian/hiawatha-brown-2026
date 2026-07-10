@@ -1,15 +1,16 @@
 // components/PanelSystem.tsx
 'use client';
-import About from './panels/AboutPanel';
+
 import Platform from './panels/PlatformPanel';
 import DistrictMap from './panels/DistrictPanel';
+import GetInvolvedPanel from './panels/GetInvolvedPanel';
 
-type PanelKey = 'about' | 'platform' | 'map';
+import type { PanelKey } from "@/app/page";
 
 const panelComponents: Record<PanelKey, React.ComponentType<{ onClose: () => void }>> = {
-  about: About,
   platform: Platform,
   map: DistrictMap,
+  "get-involved": GetInvolvedPanel,   // ✅ REQUIRED
 };
 
 interface PanelSystemProps {
@@ -19,11 +20,14 @@ interface PanelSystemProps {
 
 export default function PanelSystem({ activePanel, onClose }: PanelSystemProps) {
   const ActiveComponent = activePanel ? panelComponents[activePanel] : null;
+
   const labels: Record<PanelKey, string> = {
     about: 'Meet Hiawatha',
     platform: 'The Platform',
     map: 'District 1 Map',
+    "get-involved": 'Get Involved',   // ✅ REQUIRED
   };
+
   const activeLabel = activePanel ? labels[activePanel] : '';
 
   if (!activePanel || !ActiveComponent) return null;
@@ -41,6 +45,7 @@ export default function PanelSystem({ activePanel, onClose }: PanelSystemProps) 
             Close (ESC)
           </button>
         </header>
+
         <div className="flex-1 overflow-y-auto text-slate-700">
           <ActiveComponent onClose={onClose} />
         </div>

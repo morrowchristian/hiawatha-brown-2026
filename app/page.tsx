@@ -3,14 +3,16 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import Background from '../components/Background';
 import Hero from '../components/Hero';
-import SocialProof from '../components/SocialProof';
 import PanelSystem from '../components/PanelSystem';
-import GetInvolved from '../components/GetInvolved';
+import GetInvolvedCard from '../components/GetInvolvedCard';
+import PlatformCard from '@/components/PlatformCard';
+import BioCard from '@/components/BioCard';
+import DistrictCard from '@/components/DistrictCard';
 
-type PanelKey = 'about' | 'platform' | 'map';
+
+export type PanelKey = 'about' | 'platform' | 'map' | 'get-involved';
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<PanelKey | null>(null);
@@ -41,13 +43,18 @@ export default function Home() {
         <Background />
         <Nav />
 
-        <main className="flex-1 relative z-10 max-w-7xl w-full mx-auto px-6 md:px-12 flex flex-col justify-center py-12 lg:py-20">
+        <main className="relative z-10 w-full px-6 md:px-12 py-10">
           <Hero onOpenPanel={open} />
-          <GetInvolved />
-          <SocialProof />
         </main>
-
-        <Footer onOpenPanel={open} />
+        
+        <section className="relative z-10 w-full px-6 md:px-12 py-10">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 w-full">
+            <BioCard />
+            <PlatformCard onOpenPanel={open} />
+            <DistrictCard onOpenPanel={open} />
+            <GetInvolvedCard onOpenPanel={open} />
+          </div>
+        </section>
       </div>
 
       <PanelSystem activePanel={activePanel} onClose={close} />

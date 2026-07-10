@@ -1,4 +1,6 @@
 // components/panels/GetInvolvedPanel.tsx
+'use client';
+
 import { ArrowRight, Heart, Megaphone, MapPin } from "lucide-react";
 
 const actions = [
@@ -25,18 +27,24 @@ const actions = [
   },
 ];
 
-export default function GetInvolvedPanel() {
+export default function GetInvolvedPanel({ onClose }: { onClose: () => void }) {
   return (
     <div className="p-6 space-y-4">
 
       {/* Hero card */}
       <div className="bg-[#1E2A38] rounded-2xl p-6">
-        <p className="text-[#E8366A] text-[10px] font-bold uppercase tracking-widest mb-2">Get Involved</p>
+        <p className="text-[#E8366A] text-[10px] font-bold uppercase tracking-widest mb-2">
+          Get Involved
+        </p>
         <h2 className="text-white font-bold text-3xl leading-tight mb-3">
           Join the<br />Movement
         </h2>
         <p className="text-white/60 text-sm leading-relaxed">
-          Every volunteer, yard sign, conversation, and donation helps bring strong leadership to District 1. August 5 is closer than you think.
+          Every volunteer, yard sign, conversation, and donation helps bring strong leadership to District 1. 
+          For official election information, please confirm details with trusted state sources such as 
+          <a href="https://vote.gov" target="_blank" rel="noopener noreferrer" className="underline ml-1">
+            vote.gov
+          </a>.
         </p>
       </div>
 
@@ -69,10 +77,16 @@ export default function GetInvolvedPanel() {
 
       {/* Register to vote */}
       <div className="bg-white border border-[#D0D8E4] rounded-2xl p-5">
-        <p className="text-[#E8366A] text-[10px] font-bold uppercase tracking-widest mb-1">Election Day</p>
+        <p className="text-[#E8366A] text-[10px] font-bold uppercase tracking-widest mb-1">
+          Election Day
+        </p>
         <p className="text-[#FBBC04] font-bold text-2xl mb-1">August 5, 2025</p>
         <p className="text-[#5A6A7A] text-sm mb-4">
-          Make sure you're registered to vote in Tennessee before the deadline.
+          Make sure you're registered to vote in Tennessee before the deadline. 
+          Always confirm election details with trusted sources such as the Tennessee Secretary of State or 
+          <a href="https://ovr.govote.tn.gov/" target="_blank" rel="noopener noreferrer" className="underline ml-1">
+            GoVoteTN
+          </a>.
         </p>
         <a
           href="https://ovr.govote.tn.gov/"
