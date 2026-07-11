@@ -17,40 +17,58 @@ export default function Home() {
         <Background />
         <Nav />
 
-        {/* HERO */}
-        <main className="relative z-10 w-full px-6 md:px-12 py-10 order-1">
-          <div className="w-full max-w-7xl mx-auto">
-            <Hero />
-          </div>
+        <main className="flex-1">
+          <section className="relative z-10 w-full px-4 py-4">
+            <div
+              className="
+                grid
+                grid-cols-1
+                gap-6
+                w-full
+                max-w-7xl
+                mx-auto
+
+                lg:grid-cols-[60%_40%]
+                lg:grid-rows-[auto_auto_auto]
+              "
+            >
+
+              <div className="lg:col-start-1 lg:row-start-1">
+                <Hero />
+              </div>
+
+              <div className="lg:col-start-1 lg:row-start-2">
+                <BioCard />
+              </div>
+
+              <div
+                className="
+                  order-3
+                  lg:order-none
+                  lg:col-start-2
+                  lg:row-start-1
+                  lg:row-span-3
+                "
+              >
+                <PlatformCard />
+              </div>
+
+              <div
+                className="
+                  order-4
+                  lg:order-none
+                  lg:col-start-1
+                  lg:row-start-3
+                "
+              >
+                <DistrictCard />
+              </div>
+
+            </div>
+          </section>
+
+
         </main>
-
-        {/* CARDS */}
-        <section className="relative z-10 w-full px-6 md:px-12 py-10 order-2">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-7xl mx-auto">
-
-            {/* BioCard — mobile order 2, desktop order 1 */}
-            <div className="order-2 lg:order-1">
-              <BioCard />
-            </div>
-
-            {/* PlatformCard — mobile order 3, desktop order 2 */}
-            <div className="order-3 lg:order-2 lg:row-span-2">
-              <PlatformCard />
-            </div>
-
-            {/* DistrictCard — mobile order 4, desktop order 3 */}
-            <div className="order-4 lg:order-3">
-              <DistrictCard />
-            </div>
-
-          </div>
-
-          {/* Footer — mobile order 5 */}
-          <div className="order-5">
-            <Footer />
-          </div>
-
-        </section>
       </div>
     </>
   );

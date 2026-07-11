@@ -5,106 +5,337 @@ import { Home, TreePine, Wrench, TrendingUp, Scale } from "lucide-react";
 
 const platformItems = [
   {
-    title: "Housing & Homelessness",
+    title: "Housing & Stronger Communities",
     icon: Home,
     commitments: [
-      "Advocate for expanded use of Community Development Block Grant (CDBG) funding to rehabilitate owner-occupied homes in District 1.",
-      "Support stronger accountability for absentee landlords through more timely code enforcement and follow-up.",
-      "Back the city's transitional housing initiative while calling for regular public updates on project timelines, implementation, and community engagement.",
-      "Partner with the Cleveland Housing Authority to improve outreach and help eligible residents navigate available housing assistance."
+      <>
+        Advocate for expanded use of{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          Community Development Block Grant funding
+        </span>{" "}
+        to rehabilitate owner-occupied homes in District 1.
+      </>,
+      <>
+        Support stronger accountability for{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          absentee landlords
+        </span>{" "}
+        through timely code enforcement and follow-up.
+      </>,
+      <>
+        Support transitional housing efforts while ensuring{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          transparency, timelines, and community input.
+        </span>
+      </>,
+      <>
+        Partner with the Cleveland Housing Authority to help residents{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          access available housing resources.
+        </span>
+      </>
     ],
-    difference: "The current council approved funding that included a transitional housing facility, but many residents are still waiting for clear timelines, project updates, and opportunities for community input. Hiawatha believes major public investments should be accompanied by consistent communication and measurable accountability."
+    difference: (
+      <>
+        Public investments should come with{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          communication, accountability, and measurable progress.
+        </span>{" "}
+        Residents deserve to understand how housing initiatives impact their
+        neighborhoods.
+      </>
+    )
   },
+
   {
-    title: "Parks, Recreation & Public Spaces",
+    title: "Parks & Community Spaces",
     icon: TreePine,
     commitments: [
-      "Advocate for equitable access to the new aquatic center and future recreational facilities for District 1 residents.",
-      "Support dependable, long-term funding for park maintenance instead of relying primarily on volunteer cleanup efforts.",
-      "Expand youth recreation programming through partnerships with local schools, churches, and nonprofit organizations.",
-      "Ensure residents have a meaningful voice in planning future park improvements."
+      <>
+        Advocate for{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          equitable access
+        </span>{" "}
+        to recreational facilities for District 1 residents.
+      </>,
+      <>
+        Support dependable funding for{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          long-term park maintenance.
+        </span>
+      </>,
+      <>
+        Expand youth recreation through partnerships with{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          schools, churches, and community organizations.
+        </span>
+      </>,
+      <>
+        Ensure residents have a meaningful voice in planning future park improvements.
+      </>
     ],
-    difference: "Healthy parks require more than occasional attention—they require consistent advocacy, planning, and investment. Hiawatha will work year-round to ensure District 1's parks remain places where families can gather, children can play, and neighborhoods can thrive."
+    difference: (
+      <>
+        Strong parks require{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          consistent investment, planning, and advocacy.
+        </span>{" "}
+        Hiawatha will work to keep these spaces safe, welcoming, and accessible.
+      </>
+    )
   },
+
   {
-    title: "Neighborhood Maintenance & Revitalization",
+    title: "Neighborhood Revitalization",
     icon: Wrench,
     commitments: [
-      "Advocate for code enforcement resources to be directed where violations and neighborhood needs are greatest.",
-      "Support the creation of a public blight-tracking dashboard so residents can monitor progress.",
-      "Work with city staff to ensure District 1 receives its fair share of federal neighborhood improvement funding.",
-      "Create a more responsive process that allows residents to report maintenance concerns and receive timely follow-up."
+      <>
+        Advocate for{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          targeted code enforcement
+        </span>{" "}
+        where neighborhood needs are greatest.
+      </>,
+      <>
+        Support a public{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          blight-tracking dashboard
+        </span>{" "}
+        so residents can monitor progress.
+      </>,
+      <>
+        Ensure District 1 receives its fair share of{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          neighborhood improvement funding.
+        </span>
+      </>,
+      <>
+        Create a more responsive process for residents to report concerns and
+        receive timely follow-up.
+      </>
     ],
-    difference: "The city has identified blight reduction as an ongoing priority. Hiawatha will work to ensure those priorities translate into visible progress for District 1 neighborhoods through transparency, accountability, and consistent follow-through."
+    difference: (
+      <>
+        Revitalization requires{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          transparency, accountability, and follow-through.
+        </span>{" "}
+        Community priorities should become visible progress.
+      </>
+    )
   },
+
   {
-    title: "South Side Investment",
+    title: "South Side Opportunity",
     icon: TrendingUp,
     commitments: [
-      "Advocate for greater inclusion of south side neighborhoods in economic development planning.",
-      "Partner with the Chamber of Commerce and city staff to identify gaps in retail services and neighborhood amenities.",
-      "Support programs that help District 1 attract new businesses while revitalizing existing businesses, and grow small businesses.",
-      "Champion infrastructure improvements—including sidewalks, lighting, drainage, and road maintenance—that encourage investment and improve quality of life."
+      <>
+        Advocate for greater inclusion of South Side neighborhoods in{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          economic development planning.
+        </span>
+      </>,
+      <>
+        Partner with local leaders to identify gaps in{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          businesses, services, and neighborhood amenities.
+        </span>
+      </>,
+      <>
+        Support programs that help{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          grow small businesses
+        </span>{" "}
+        while attracting new investment.
+      </>,
+      <>
+        Champion infrastructure improvements that improve{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          safety, mobility, and quality of life.
+        </span>
+      </>
     ],
-    difference: "Balanced growth requires intentional leadership. Hiawatha will work to ensure every neighborhood has a voice during budget discussions and economic development planning."
+    difference: (
+      <>
+        Growth should benefit every neighborhood. District 1 deserves a{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          strong voice in Cleveland’s future.
+        </span>
+      </>
+    )
   },
+
   {
-    title: "Fiscal Transparency & Community Impact",
+    title: "Transparent Leadership",
     icon: Scale,
     commitments: [
-      "Advocate for a public project dashboard that tracks milestones, timelines, and expenditures.",
-      "Support community impact reporting before significant budget reallocations.",
-      "Hold regular District 1 town halls to discuss major spending decisions and gather public input.",
-      "Promote accountability and transparency for future public investments so residents understand how their tax dollars are being used."
+      <>
+        Advocate for a public dashboard tracking{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          projects, timelines, and spending.
+        </span>
+      </>,
+      <>
+        Support community impact reporting before major budget decisions.
+      </>,
+      <>
+        Hold regular District 1 town halls to{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          listen, communicate, and engage residents.
+        </span>
+      </>,
+      <>
+        Promote accountability so residents understand how{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          their tax dollars are being used.
+        </span>
+      </>
     ],
-    difference: "Approving funding is only the first step. Effective leadership means tracking progress, communicating openly with residents, and ensuring projects deliver the promised benefits. Hiawatha is committed to keeping the community informed every step of the way."
+    difference: (
+      <>
+        Leadership requires{" "}
+        <span className="text-[var(--primary-pink)] font-bold">
+          tracking progress, communicating openly, and delivering results.
+        </span>
+      </>
+    )
   }
 ];
+
 
 export default function PlatformCard() {
   return (
     <div className="card w-full text-left">
+
       <div className="fluid-pad fluid-stack">
-        <div className="text-center pb-6">
-          <p className="card-label tracking-[0.25em]">OUR PLATFORM</p>
-          <h2 className="fluid-title text-white">Priorities for District 1</h2>
-          <p className="text-white/70 mt-3 max-w-2xl mx-auto">
-            Concrete commitments to improve housing, parks, neighborhoods, and transparency in Cleveland.
+
+
+        {/* Header */}
+
+        <div className="pb-6">
+
+          <p className="font-extrabold text-left text-2xl leading-snug drop-shadow-[0_1px_1px_rgba(0,0,0,0.10)] mx-2">
+            Building a stronger Cleveland.
+            <span className="block text-[var(--primary-pink)]">
+              Investing in District 1.
+            </span>
+            A future built together.
           </p>
+
+
+          <div className="card-divider my-4 mx-2" />
+
+
+          <p className="card-body text-white/80 mx-2">
+
+            Hiawatha Brown’s platform is focused on{" "}
+            <span className="text-[var(--primary-pink)] font-bold">
+              stronger neighborhoods, responsible growth, and transparent leadership.
+            </span>{" "}
+            Together, we can create a Cleveland where every community has the
+            opportunity to thrive.
+
+          </p>
+
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+
+
+        {/* Platform Items */}
+
+        <div className="grid grid-cols-1 gap-6 mx-2">
+
           {platformItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div key={index} className="card-inner fluid-stack">
-                <div className="flex items-start gap-4">
-                  <div className="card-icon shrink-0 mt-1">
-                    <Icon className="w-6 h-6 text-[#ff4f85]" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="card-label tracking-widest mb-3 text-lg">{item.title}</p>
-                    
-                    <ul className="space-y-2.5 mb-5">
-                      {item.commitments.map((commitment, i) => (
-                        <li key={i} className="card-body flex gap-3">
-                          <span className="text-[#ff4f85] shrink-0 mt-1 text-lg leading-none">•</span>
-                          <span>{commitment}</span>
-                        </li>
-                      ))}
-                    </ul>
 
-                    <div className="pt-4 border-t border-white/10">
-                      <p className="text-[#ff4f85] text-xs font-medium tracking-wider mb-1">THE DIFFERENCE</p>
-                      <p className="card-body text-white/75 leading-relaxed">{item.difference}</p>
-                    </div>
+            const Icon = item.icon;
+
+            return (
+
+              <div 
+                key={index}
+                className="card-inner"
+              >
+
+
+                <div className="card-header">
+
+
+                  <div className="card-icon">
+
+                    <Icon className="w-6 h-6 text-[#ff4f85]" />
+
                   </div>
+
+
+                  <p className="card-label tracking-widest text-lg">
+
+                    {item.title}
+
+                  </p>
+
+
                 </div>
+
+
+
+                <div className="card-divider my-4" />
+
+
+
+                <ul className="space-y-3 mx-2 mb-5">
+
+                  {item.commitments.map((commitment, i) => (
+
+                    <li
+                      key={i}
+                      className="card-body flex gap-3"
+                    >
+
+                      <span className="text-[#ff4f85] shrink-0 mt-1">
+                        •
+                      </span>
+
+                      <span>
+                        {commitment}
+                      </span>
+
+                    </li>
+
+                  ))}
+
+                </ul>
+
+
+
+                <div className="pt-4 border-t border-white/10 mx-2">
+
+
+                  <p className="text-[#ff4f85] text-xs font-bold tracking-widest mb-2">
+                    THE COMMITMENT
+                  </p>
+
+
+                  <p className="card-body text-white/75 leading-relaxed">
+
+                    {item.difference}
+
+                  </p>
+
+
+                </div>
+
+
               </div>
+
             );
+
           })}
+
         </div>
+
+
       </div>
+
     </div>
   );
 }
