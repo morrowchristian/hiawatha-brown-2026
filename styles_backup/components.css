@@ -1,0 +1,7 @@
+/* styles/components.css - Minimal test version */
+
+/* Test if this minimal file works */
+.card {
+  position: relative;
+  border-radius: 2rem;
+}

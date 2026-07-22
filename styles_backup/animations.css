@@ -1,0 +1,30 @@
+/* styles/animations.css */
+.charm-animate {
+  animation: charmFade 0.5s ease-out forwards;
+}
+
+.charm-pulse:hover {
+  animation: charmPulse 0.6s ease-in-out;
+}
+
+@keyframes charmFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes charmPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}

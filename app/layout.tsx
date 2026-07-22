@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
-import './globals.css';
+import '@/styles/index.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hiawatha-brown-2026.vercel.app'),

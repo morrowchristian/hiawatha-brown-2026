@@ -1,0 +1,276 @@
+/* styles/components.css */
+
+/* ============================================
+   CARD CONTAINER
+   ============================================ */
+
+.card {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07);
+}
+
+.card-title {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  white-space: nowrap;
+}
+
+.card-head {
+  color: rgba(255, 255, 255, 1);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  line-height: 1.6;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.5rem;
+  background-color: var(--primary-pink);
+  z-index: 2;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.card.no-bar::before {
+  content: none !important;
+}
+
+.card-inner {
+  background-color: var(--inner-card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.card-summary {
+  color: var(--background);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.card-body {
+  color: rgba(75, 85, 99, 1);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  line-height: 1.6;
+}
+
+.card-label {
+  color: var(--primary-pink);
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.card-divider {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--apple-green),
+    var(--apple-green),
+    transparent
+  );
+}
+
+
+/* ============================================
+   HERO COMPONENT
+   ============================================ */
+
+/* Main layout */
+.hero-container {
+  display: grid;
+  grid-template-columns: minmax(380px, 2fr) minmax(280px, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+
+/* Image */
+.hero-image-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 84.21%;
+  overflow: hidden;
+}
+
+.hero-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Quote */
+.hero-quote-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.hero-quote-container .card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+
+/* Hero Text */
+.hero-tagline {
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 900;
+  text-align: left;
+  color: var(--foreground);
+  margin: 0 0.5rem;
+}
+
+.hero-quote {
+  color: var(--foreground);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-align: left;
+  font-style: italic;
+}
+
+.hero-attribution {
+  color: var(--primary-pink);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.hero-divider {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hero-quote-text {
+  font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+  padding-left: clamp(0.5rem, 2vw, 1rem);
+  padding-right: clamp(0.5rem, 2vw, 1rem);
+}
+
+
+/* ============================================
+   QUOTE ICONS
+   ============================================ */
+
+.quote-icon {
+  position: absolute;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-family: Georgia, serif;
+  color: var(--primary-pink);
+  line-height: 1;
+  opacity: 0.3;
+  user-select: none;
+  pointer-events: none;
+}
+
+.quote-icon.top-left {
+  top: 0.25rem;
+  left: 0.25rem;
+}
+
+.quote-icon.bottom-right {
+  bottom: 0.25rem;
+  right: 0.25rem;
+}
+
+
+.hero-quote-container .quote-icon {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  opacity: 0.25;
+}
+
+.hero-quote-container .quote-icon.top-left {
+  top: 0.25rem;
+  left: 0.5rem;
+}
+
+.hero-quote-container .quote-icon.bottom-right {
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+
+/* ============================================
+   MOBILE HERO
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+
+  .hero-image-container,
+  .hero-quote-container {
+    height: auto;
+  }
+
+  .hero-image-container img {
+    height: auto;
+  }
+
+
+  .hero-image-container img {
+    height: auto;
+  }
+
+
+  .hero-tagline,
+  .card-title {
+    font-size: 1rem;
+  }
+
+
+  .card-body {
+    font-size: 0.75rem;
+  }
+
+
+  .hero-quote-container .quote-icon {
+    font-size: 1.75rem;
+  }
+
+
+  .hero-quote-container .quote-icon.top-left {
+    top: 0.15rem;
+    left: 0.25rem;
+  }
+
+
+  .hero-quote-container .quote-icon.bottom-right {
+    bottom: 0.25rem;
+    right: 0.25rem;
+  }
+
+
+  .hero-quote-container .card-inner {
+    padding: 0.75rem;
+  }
+
+}

@@ -19,9 +19,9 @@ export default function Nav() {
     <nav className="sticky top-0 z-50">
       {/* Visual layer (safe for blur, borders, etc.) */}
       <div className="
-        bg-[rgba(2,6,23,0.70)]
+        bg-[var(--card-bg)]
         backdrop-blur-md
-        border-b border-white/10
+        border-b border-[var(--card-border)]
         py-[clamp(0.5rem,1vw,1rem)]
       ">
         <div className="
@@ -34,7 +34,7 @@ export default function Nav() {
           <Link href="/" className="flex items-center gap-3 group">
             
             <div className="
-              rounded-2xl bg-[#ff4f85] text-white font-black shadow-lg
+              rounded-2xl bg-[var(--primary-pink)] text-white font-black shadow-lg
               w-[clamp(2rem,4vw,2.75rem)]
               h-[clamp(2rem,4vw,2.75rem)]
               text-[clamp(1rem,2.5vw,1.75rem)]
@@ -45,13 +45,13 @@ export default function Nav() {
             
             <div className="leading-tight flex flex-col">
 
-              <div className="font-black text-white tracking-tighter text-[clamp(1rem,2.5vw,1.5rem)]">
+              <div className="font-black tracking-tighter text-[clamp(1rem,2.5vw,1.5rem)]">
                 HIAWATHA BROWN
               </div>
 
-              <div className="h-[2px] w-full bg-[#ff4f85] my-[2px]" />
+              <div className="h-[2px] w-full bg-[var(--primary-pink)] my-[2px]" />
 
-              <div className="text-white text-[clamp(0.5rem,1.5vw,0.75rem)] tracking-[2px] uppercase">
+              <div className="text-[clamp(0.5rem,1.5vw,0.75rem)] tracking-[2px] uppercase">
                 CITY COUNCIL, DISTRICT 1 <br/>CLEVELAND, TN
               </div>
 
@@ -69,7 +69,7 @@ export default function Nav() {
               href="https://forms.gle/8KoEqMkJiu1fZESn8"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#ff4f85] hover:bg-[#d12e5c] px-[clamp(0.5rem,1.5vw,1rem)] py-[clamp(0.25rem,1.0vw,0.575rem)] text-[clamp(0.75rem,2vw,1rem)] font-semibold text-white"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--primary-pink)] hover:bg-[#d12e5c] px-[clamp(0.5rem,1.5vw,1rem)] py-[clamp(0.25rem,1.0vw,0.575rem)] text-[clamp(0.75rem,2vw,1rem)] font-semibold text-white transition-colors duration-200"
             >
               <Heart className="h-5 w-5 hidden [@media(min-width:950px)]:block" />
               <span className="hidden [@media(min-width:950px)]:inline">
@@ -84,7 +84,7 @@ export default function Nav() {
               href="https://www.facebook.com/profile.php?id=61567583096946"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1877F2] px-[clamp(0.5rem,1.5vw,1rem)] py-[clamp(0.25rem,1.0vw,0.575rem)] text-[clamp(0.75rem,2vw,1rem)] font-semibold text-white"
+              className="inline-flex items-center gap-2 rounded-full bg-[#1877F2] hover:bg-[#1558b0] px-[clamp(0.5rem,1.5vw,1rem)] py-[clamp(0.25rem,1.0vw,0.575rem)] text-[clamp(0.75rem,2vw,1rem)] font-semibold text-white transition-colors duration-200"
             >
               <FacebookIcon />
               <span className="hidden [@media(min-width:950px)]:inline">

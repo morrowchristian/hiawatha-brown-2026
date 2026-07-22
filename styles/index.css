@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import './variables.css';
+@import './base.css';
+@import './utilities.css';
+@import './components.css';
+@import './animations.css';
+
+:root {
+  --background: #ffffff;
+}
+
+body {
+  background: var(--background);
+}

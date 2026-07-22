@@ -1,0 +1,24 @@
+/* styles/variables */
+
+@theme { --breakpoint-md: 850px; }
+
+:root {
+  --background: #ffffff;
+  --foreground: rgba(23, 23, 23, 1);
+
+  --primary-pink: rgba(255, 79, 133, 1);
+  --deep-green: rgba(21, 128, 61, 1);
+  --apple-green: rgba(168, 228, 160, 1);
+
+  --card-bg: rgba(102, 102, 129, 0.7);
+  --card-header-bg: rgba(226, 232, 240, 1);
+  --inner-card-bg: rgba(255, 255, 255, 0.924);
+  --caption-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(226, 232, 240, 1);
+
+  --text-pop: rgba(255, 79, 133, 1);
+  --text-muted: rgba(75, 85, 99, 1);
+
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system,
+               BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
