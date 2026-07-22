@@ -35,7 +35,7 @@ export default function Hero() {
               <span className="quote-icon bottom-right" aria-hidden="true">”</span>
 
               {/* Quote Body */}
-              <div className="card-body space-y-2 relative z-10 mx-[2px]">
+              <div className="card-body space-y-2 relative z-10 mx-4 my-4 ">
                 <p className="leading-snug text-sm">
                   I'm running for {" "}
                   <span className="text-pop font-bold uppercase nowrap">District 1 City Council</span>{" "}
@@ -44,14 +44,14 @@ export default function Hero() {
                 </p>
 
                 {/* Staggered Callout Text */}
-                <div className="text-pop font-bold uppercase tracking-wide text-2xl pt-1">
-                  <span className="block text-left pl-2"><em>STRONGER</em></span>
-                  <span className="block text-right pr-2"><em>TOGETHER.</em></span>
+                <div className="text-pop font-bold uppercase tracking-wide text-2xl mx-6">
+                  <span className="block text-left pl-4"><em>STRONGER</em></span>
+                  <span className="block text-right pr-4"><em>TOGETHER.</em></span>
                 </div>
               </div>
 
               {/* Attribution */}
-              <p className="w-full pt-2 pr-2 text-right font-serif italic text-pop relative z-10 text-xs">
+              <p className="w-full pr-2 text-right font-serif italic text-pop relative z-10 text-xs">
                 — Hiawatha Brown
               </p>
             </div>
