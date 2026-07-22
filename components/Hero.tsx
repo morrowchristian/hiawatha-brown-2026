@@ -45,8 +45,8 @@ export default function Hero() {
 
                 {/* Staggered Callout Text */}
                 <div className="text-pop font-bold uppercase tracking-wide text-2xl mx-6">
-                  <span className="block text-left pl-1"><em>STRONGER</em></span>
-                  <span className="block text-right pr-1"><em>TOGETHER.</em></span>
+                  <span className="block text-left pl-2"><em>STRONGER</em></span>
+                  <span className="block text-right pr-2"><em>TOGETHER.</em></span>
                 </div>
               </div>
 
