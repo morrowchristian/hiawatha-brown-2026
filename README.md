@@ -67,4 +67,4 @@ they are not committed to the repo.
 
 ## Contributing
 
-This is a private campaign project. Contact the campaign for access.
+This is a campaign project. Questions or fixes — open an issue or a pull request.
